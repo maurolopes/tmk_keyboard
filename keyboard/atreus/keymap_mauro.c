@@ -9,20 +9,20 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KEYMAP( /* 0: colemak */
-         KC_Q,    KC_W,      KC_F,    KC_P,    KC_G,                          KC_J,   KC_L,   KC_U,      KC_Y,    KC_ENT,   \
-         KC_A,    KC_R,      KC_S,    KC_T,    KC_D,                          KC_H,   KC_N,   KC_E,      KC_I,    KC_O,     \
-         KC_Z,    KC_X,      KC_C,    KC_V,    KC_B,                          KC_K,   KC_M,   KC_SCOLON, KC_QUOT, KC_MINUS, \
-         KC_RALT, KC_GRAVE,  KC_LGUI, KC_LSFT, KC_BSPC,   KC_FN23, KC_LCTL,   KC_SPC, KC_FN0, KC_COMM,   KC_DOT,  KC_SLSH   \
+         KC_Q,   KC_W,    KC_F,    KC_P,    KC_G,                          KC_J,   KC_L,   KC_U,      KC_Y,    KC_ENT,   \
+         KC_A,   KC_R,    KC_S,    KC_T,    KC_D,                          KC_H,   KC_N,   KC_E,      KC_I,    KC_O,     \
+         KC_Z,   KC_X,    KC_C,    KC_V,    KC_B,                          KC_K,   KC_M,   KC_SCOLON, KC_QUOT, KC_MINUS, \
+         KC_TAB, KC_FN24, KC_LGUI, KC_LSFT, KC_BSPC,   KC_FN23, KC_LCTL,   KC_SPC, KC_FN0, KC_COMM,   KC_DOT,  KC_SLSH   \
   ), KEYMAP( /* 1: qwerty */
          KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                          KC_Y,   KC_U,   KC_I,    KC_O,    KC_P,    \
          KC_A,   KC_S,   KC_D,    KC_F,    KC_G,                          KC_H,   KC_J,   KC_K,    KC_L,    KC_SCLN, \
          KC_Z,   KC_X,   KC_C,    KC_V,    KC_B,                          KC_N,   KC_M,   KC_COMM, KC_DOT,  KC_SLSH, \
          KC_ESC, KC_TAB, KC_LGUI, KC_LSFT, KC_BSPC,   KC_LALT, KC_LCTL,   KC_SPC, KC_FN0, KC_MINS, KC_QUOT, KC_ENT   \
   ), KEYMAP( /* 2: numbers and arrows */
-         KC_1,    KC_2,          KC_3,         KC_4,          KC_5,                         KC_PGUP,            KC_HOME,     KC_UP,       KC_END,   KC_TAB,    \
-         KC_6,    KC_7,          KC_8,         KC_9,          KC_0,                         KC_PGDN,            KC_LEFT,     KC_DOWN,     KC_RIGHT, KC_BSLASH, \
-         KC_UNDO, SHIFT(KC_DEL), CTRL(KC_INS), SHIFT(KC_INS), KC_EQL,                       KC_FN5, /* reset */ SHIFT(KC_9), SHIFT(KC_0), KC_LBRC,  KC_RBRC,   \
-         KC_TRNS, KC_FN1,        KC_TRNS,      KC_TRNS,       KC_DEL,   KC_TRNS, KC_TRNS,   KC_SPC,             KC_FN0,      KC_TRNS,     KC_TRNS,  KC_FN3     \
+         KC_1,    KC_2,          KC_3,         KC_4,          KC_5,                          KC_PGUP,            KC_HOME,     KC_UP,       KC_END,   KC_DEL,    \
+         KC_6,    KC_7,          KC_8,         KC_9,          KC_0,                          KC_PGDN,            KC_LEFT,     KC_DOWN,     KC_RIGHT, KC_BSLASH, \
+         KC_UNDO, SHIFT(KC_DEL), CTRL(KC_INS), SHIFT(KC_INS), KC_EQL,                        KC_FN5, /* reset */ SHIFT(KC_9), SHIFT(KC_0), KC_LBRC,  KC_RBRC,   \
+         KC_FN1,  KC_TRNS,       KC_TRNS,      KC_TRNS,       KC_TRNS,   KC_TRNS, KC_TRNS,   KC_SPC,             KC_FN0,      KC_TRNS,     KC_TRNS,  KC_FN3     \
   ), KEYMAP( /* 3: mouse */
          KC_FN20, KC_NO,   KC_FN11, KC_NO,   KC_NO,                       KC_FN18, KC_NO,  KC_FN7,             KC_NO,   KC_FN19, \
          KC_FN21, KC_FN13, KC_FN12, KC_FN14, KC_NO,                       KC_NO,   KC_FN9, KC_FN8,             KC_FN10, KC_NO,   \
@@ -61,7 +61,8 @@ const uint16_t PROGMEM fn_actions[] = {
   [20] = ACTION_MOUSEKEY(KC_ACL0),
   [21] = ACTION_MOUSEKEY(KC_ACL1),
   [22] = ACTION_MOUSEKEY(KC_ACL2),
-  [23] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC)
+  [23] = ACTION_MODS_TAP_KEY(MOD_LALT, KC_ESC),
+  [24] = ACTION_MODS_TAP_KEY(MOD_RALT, KC_GRAVE)
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
